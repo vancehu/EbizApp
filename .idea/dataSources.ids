@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Derby - spring@localhost" uuid="08147dec-de87-46cb-9f9b-39e6eedf5017">
+    <database-info product="Apache Derby" version="10.11.1.1 - (1616546)" jdbc-version="4.2" driver-name="Apache Derby Network Client JDBC Driver" driver-version="10.11.1.1 - (1616546)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="APP" catalog=""/>
+    <schema name="TEST" catalog=""/>
+    <table name="AREA" schema="TEST" catalog="" type="TABLE">
+      <column name="ZIPCODE" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="SQL150410120208850" columns="ZIPCODE"/>
+      <exported-key name="FK_3PEV5PHCK463OUK4XG77ED5VN" table="CUSTOMER" schema="TEST" catalog="" columns="AREA_ZIPCODE"/>
+    </table>
+    <table name="CUSTOMER" schema="TEST" catalog="" type="TABLE">
+      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" def="R0VORVJBVEVEX0JZX0RFRkFVTFQ=" autoIncrement="true"/>
+      <column name="AVATARLINK" sqlType="VARCHAR" precision="16" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EMAIL" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ORGNAME" sqlType="VARCHAR" precision="64" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="USERNAME" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="AREA_ZIPCODE" sqlType="VARCHAR" precision="5" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SQL150410120208860" columns="ID"/>
+      <foreign-key name="FK_3PEV5PHCK463OUK4XG77ED5VN" columns="AREA_ZIPCODE" ref-table="AREA" ref-schema="TEST" ref-catalog="" ref-columns="ZIPCODE" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+  </data-source>
+  <data-source name="MySQL - @localhost" uuid="e55eda14-059f-4c43-b9fa-a59b00b610b9">
+    <database-info product="MySQL" version="5.6.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="test"/>
+  </data-source>
+</component>
