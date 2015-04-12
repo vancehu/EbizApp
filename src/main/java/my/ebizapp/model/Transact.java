@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by Vance on 4/12/2015.
  */
 @Entity
-public class Order {
+public class Transact {
     @Id
     @GeneratedValue
     private long id;
@@ -29,7 +29,7 @@ public class Order {
     @Column(nullable = false)
     private boolean shipped = false;
 
-    public Order(Product product, Customer customer, float priceSnapshot, long quantity) {
+    public Transact(Product product, Customer customer, float priceSnapshot, long quantity) {
         this.product = product;
         this.customer = customer;
         //customized price and quantity handler

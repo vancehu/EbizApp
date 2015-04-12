@@ -34,7 +34,7 @@ public class Product {
     private List<Category> categories;
 
     @OneToMany
-    private List<Order> orders;
+    private List<Transact> transacts;
 
     public Product(Supplier supplier, String name, String description, long stockQuantity, float price, String imgLink,
                    List<Category> categories) {
@@ -111,12 +111,12 @@ public class Product {
         this.categories = categories;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public List<Transact> getTransacts() {
+        return transacts;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public void setTransacts(List<Transact> transacts) {
+        this.transacts = transacts;
     }
 
 

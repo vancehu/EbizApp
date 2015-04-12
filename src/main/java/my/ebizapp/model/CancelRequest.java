@@ -13,7 +13,7 @@ public class CancelRequest {
     private long id;
 
     @OneToOne(optional = false)
-    private Order order;
+    private Transact transact;
 
     @Column(nullable = false)
     private boolean customerApproved = false;
@@ -28,8 +28,8 @@ public class CancelRequest {
     @Column(nullable = false)
     private Date time = new Date();
 
-    public CancelRequest(Order order, boolean customerApproved, boolean supplierApproved, String reason) {
-        this.order = order;
+    public CancelRequest(Transact transact, boolean customerApproved, boolean supplierApproved, String reason) {
+        this.transact = transact;
         this.customerApproved = customerApproved;
         this.supplierApproved = supplierApproved;
         this.reason = reason;
@@ -43,12 +43,12 @@ public class CancelRequest {
         this.id = id;
     }
 
-    public Order getOrder() {
-        return order;
+    public Transact getTransact() {
+        return transact;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setTransact(Transact transact) {
+        this.transact = transact;
     }
 
     public boolean isCustomerApproved() {

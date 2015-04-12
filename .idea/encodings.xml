@@ -3,5 +3,12 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/area-import.sql" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/resources/app.js" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/resources/bower.json" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/resources/bower_components" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/resources/css" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/resources/res" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/resources/template-category.html" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/resources/template-homepage.html" charset="windows-1252" />
   </component>
 </project>

@@ -41,7 +41,7 @@ public class Customer {
     private Area area;
 
     @OneToMany
-    private List<Order> orders;
+    private List<Transact> transacts;
 
     Customer() {
     }
@@ -130,11 +130,11 @@ public class Customer {
         this.area = area;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public List<Transact> getTransacts() {
+        return transacts;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public void setTransacts(List<Transact> transacts) {
+        this.transacts = transacts;
     }
 }
