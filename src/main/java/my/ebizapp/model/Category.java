@@ -1,6 +1,5 @@
 package my.ebizapp.model;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,26 +9,65 @@ import java.util.List;
 @Entity
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 64)
     private String name;
 
     @Column(nullable = false)
     private long parentId;
 
-    @Column(nullable = false)
-    private long stock = 0;
-
-    @Column(nullable = false)
-    private long price;
-
-    @Column(nullable = false)
+    @Column(length = 32)
     private String imgLink;
 
     @ManyToMany
     private List<Product> products;
 
+    public Category(String name, long parentId, String imgLink) {
+        this.name = name;
+        this.parentId = parentId;
+        this.imgLink = imgLink;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(long parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getImgLink() {
+        return imgLink;
+    }
+
+    public void setImgLink(String imgLink) {
+        this.imgLink = imgLink;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 }
 

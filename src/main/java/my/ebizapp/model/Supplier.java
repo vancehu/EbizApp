@@ -3,6 +3,7 @@ package my.ebizapp.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Vance on 4/11/2015.
@@ -11,7 +12,7 @@ import javax.persistence.*;
 public class Supplier {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private long id;
 
     @Column(length = 32, nullable = false, unique = true)
@@ -32,24 +33,28 @@ public class Supplier {
 
     private String description;
 
-    @Column(length = 16)
-    private String avatarLink;
+    @Column(length = 32)
+    private String imgLink;
 
     @ManyToOne
     private Area area;
+
+    @OneToMany
+    private List<Product> products;
+
 
     Supplier() {
     }
 
     public Supplier(String username, String password, String orgName, String email, String phone, String description,
-                    String avatarLink, Area area) {
+                    String imgLink, Area area) {
         this.username = username;
         this.password = password;
         this.orgName = orgName;
         this.email = email;
         this.phone = phone;
         this.description = description;
-        this.avatarLink = avatarLink;
+        this.imgLink = imgLink;
         this.area = area;
     }
 
@@ -110,11 +115,11 @@ public class Supplier {
     }
 
     public String getAvatarLink() {
-        return avatarLink;
+        return imgLink;
     }
 
-    public void setAvatarLink(String avatarLink) {
-        this.avatarLink = avatarLink;
+    public void setAvatarLink(String imgLink) {
+        this.imgLink = imgLink;
     }
 
     public Area getArea() {

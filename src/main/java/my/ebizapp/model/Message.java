@@ -11,18 +11,18 @@ import java.util.Date;
 @Entity
 public class Message {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private long id;
 
     @Column(nullable = false)
     private String message;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Customer customer;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Supplier supplier;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -97,7 +97,7 @@ public class Message {
         return hasRead;
     }
 
-    public void setHasRead(boolean unread) {
-        this.hasRead = unread;
+    public void setHasRead(boolean hasRead) {
+        this.hasRead = hasRead;
     }
 }
