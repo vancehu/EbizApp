@@ -5,13 +5,13 @@
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
-    <schema name="APP" catalog=""/>
     <schema name="TEST" catalog=""/>
     <table name="AREA" schema="TEST" catalog="" type="TABLE">
       <column name="ZIPCODE" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12"/>
       <column name="NAME" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="SQL150410120208850" columns="ZIPCODE"/>
+      <primary-key name="SQL150411222918120" columns="ZIPCODE"/>
       <exported-key name="FK_3PEV5PHCK463OUK4XG77ED5VN" table="CUSTOMER" schema="TEST" catalog="" columns="AREA_ZIPCODE"/>
+      <exported-key name="FK_R7CQWWLRMLM4E21FEWGTOTKNT" table="SUPPLIER" schema="TEST" catalog="" columns="AREA_ZIPCODE"/>
     </table>
     <table name="CUSTOMER" schema="TEST" catalog="" type="TABLE">
       <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" def="R0VORVJBVEVEX0JZX0RFRkFVTFQ=" autoIncrement="true"/>
@@ -20,10 +20,38 @@
       <column name="EMAIL" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="ORGNAME" sqlType="VARCHAR" precision="64" scale="0" nullable="true" jdbcType="12"/>
       <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PHONE" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
       <column name="USERNAME" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
       <column name="AREA_ZIPCODE" sqlType="VARCHAR" precision="5" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="SQL150410120208860" columns="ID"/>
+      <primary-key name="SQL150411222918470" columns="ID"/>
       <foreign-key name="FK_3PEV5PHCK463OUK4XG77ED5VN" columns="AREA_ZIPCODE" ref-table="AREA" ref-schema="TEST" ref-catalog="" ref-columns="ZIPCODE" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_HM91BP68S493BA2NOQ1CKMB9S" table="MESSAGE" schema="TEST" catalog="" columns="CUSTOMER_ID"/>
+    </table>
+    <table name="MESSAGE" schema="TEST" catalog="" type="TABLE">
+      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" def="R0VORVJBVEVEX0JZX0RFRkFVTFQ=" autoIncrement="true"/>
+      <column name="MESSAGE" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TIME" sqlType="TIMESTAMP" precision="29" scale="9" nullable="false" jdbcType="93"/>
+      <column name="TOCUSTOMER" sqlType="BOOLEAN" precision="1" scale="0" nullable="false" jdbcType="16"/>
+      <column name="UNREAD" sqlType="BOOLEAN" precision="1" scale="0" nullable="false" jdbcType="16"/>
+      <column name="CUSTOMER_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="SUPPLIER_ID" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="SQL150411222918810" columns="ID"/>
+      <foreign-key name="FK_HM91BP68S493BA2NOQ1CKMB9S" columns="CUSTOMER_ID" ref-table="CUSTOMER" ref-schema="TEST" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_P47ENJCEDJ3HP73LNPNMWU3B1" columns="SUPPLIER_ID" ref-table="SUPPLIER" ref-schema="TEST" ref-catalog="" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="SUPPLIER" schema="TEST" catalog="" type="TABLE">
+      <column name="ID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" def="R0VORVJBVEVEX0JZX0RFRkFVTFQ=" autoIncrement="true"/>
+      <column name="AVATARLINK" sqlType="VARCHAR" precision="16" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EMAIL" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ORGNAME" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PHONE" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USERNAME" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="AREA_ZIPCODE" sqlType="VARCHAR" precision="5" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="SQL150411222919150" columns="ID"/>
+      <foreign-key name="FK_R7CQWWLRMLM4E21FEWGTOTKNT" columns="AREA_ZIPCODE" ref-table="AREA" ref-schema="TEST" ref-catalog="" ref-columns="ZIPCODE" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_P47ENJCEDJ3HP73LNPNMWU3B1" table="MESSAGE" schema="TEST" catalog="" columns="SUPPLIER_ID"/>
     </table>
   </data-source>
   <data-source name="MySQL - @localhost" uuid="e55eda14-059f-4c43-b9fa-a59b00b610b9">
