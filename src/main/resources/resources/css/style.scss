@@ -1,0 +1,224 @@
+@import "base";
+
+body {
+  margin: 0;
+}
+
+%circle {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+.circle-primary {
+  @extend %circle;
+  background-color: red;
+  color: $color-white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#top {
+  margin: 25px;
+  h1 {
+    display: inline;
+    font-family: $font-title;
+    color: $color-strong;
+  }
+}
+
+#toolbar {
+  float: right;
+}
+
+#toolbarVertical {
+  display: none;
+  text-align: left;
+  position: fixed;
+  top: 33%;
+  right: 0;
+  height: 50px;
+  margin-top: -25px;
+  width: 80px;
+  z-index: 2;
+}
+
+#searchBar {
+  min-height: 50px;
+  background-color: $color-primary;
+  margin: 10px auto 10px auto;
+  color: $color-white;
+  text-align: center;
+  ul {
+    list-style-type: none;
+    display: inline-block;
+    li {
+      font-family: $font-em;
+      display: inline-block;
+      margin: auto 25px auto 25px;
+      input {
+        border: 1px solid #848484;
+        border-radius: 10px;
+        outline: 0;
+        min-height: 30px;
+        min-width: 375px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .icon-search {
+        position: relative;
+        color: $color-primary;
+        left: -30px;
+      }
+    }
+  }
+}
+
+.search-bar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0px !important;
+  z-index: 5;
+}
+
+%button {
+  font-size: 16px;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: arial;
+  margin: 6px;
+  position: relative;
+}
+
+.button-primary {
+  @extend %button;
+  background: linear-gradient(to bottom, darken($color-primary, 5%) 5%, darken($color-primary, 10%) 100%);
+  border: 1px solid $color-strong;
+  color: $color-white;
+  text-shadow: 0px 1px 1px $color-strong;
+  &:hover {
+    background: linear-gradient(to bottom, darken($color-primary, 5%) 5%, $color-primary 100%);
+  }
+}
+
+.button-normal {
+  @extend %button;
+  background: linear-gradient(to bottom, darken($color-white, 5%) 5%, darken($color-white, 10%) 100%);
+  border: 1px solid $color-primary;
+  color: $color-strong;
+  text-shadow: 0px 1px 1px $color-primary;
+  &:hover {
+    background: linear-gradient(to bottom, darken($color-white, 5%) 5%, $color-white 100%);
+  }
+}
+
+.link-normal {
+  font-size: 1em;
+  text-decoration: none;
+  font-family: arial;
+  color: $color-primary;
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.container {
+  margin: 25px auto 25px auto;
+  width: 1000px;
+  h1 {
+    font-family: $font-em;
+    color: $color-primary;
+  }
+  p {
+    font-family: $font-normal;
+    font-size: 1.2em;
+  }
+}
+
+.category {
+  float: left;
+  text-align: center;
+  font-family: $font-normal;
+  color: $color-strong;
+  width: 200px;
+  margin: 25px;
+  height: 200px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+    color: $color-primary;
+  }
+}
+
+.category-image-box {
+  border: solid $color-secondary 2px;
+  border-radius: 6px;
+  padding: 10px;
+  img {
+    width: 100%;
+  }
+}
+
+.slider {
+  width: 640px;
+  position: relative;
+  padding-top: 320px;
+  margin: 100px auto;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+  > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+  }
+  input[name='slide_switch'] {
+    display: none;
+  }
+  label {
+    margin: 18px 0 0 18px;
+    border: 3px solid #999;
+    float: left;
+    cursor: pointer;
+    transition: all 0.5s;
+    opacity: 0.6;
+    img {
+      display: block;
+    }
+  }
+  input[name='slide_switch']:checked + label {
+    border-color: #666;
+    opacity: 1;
+  }
+  input[name='slide_switch'] ~ img {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  input[name='slide_switch']:checked + label + img {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-light {
+  color: $color-grey;
+  font-size: 0.9em !important;
+}

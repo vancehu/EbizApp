@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+}
+
+.circle-primary {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+.circle-primary {
+    background-color: red;
+    color: #FEFFFD;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#top {
+    margin: 25px;
+}
+
+#top h1 {
+    display: inline;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #234C00;
+}
+
+#toolbar {
+    float: right;
+}
+
+#toolbarVertical {
+    display: none;
+    text-align: left;
+    position: fixed;
+    top: 33%;
+    right: 0;
+    height: 50px;
+    margin-top: -25px;
+    width: 80px;
+    z-index: 2;
+}
+
+#searchBar {
+    min-height: 50px;
+    background-color: #609732;
+    margin: 10px auto 10px auto;
+    color: #FEFFFD;
+    text-align: center;
+}
+
+#searchBar ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+#searchBar ul li {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    display: inline-block;
+    margin: auto 25px auto 25px;
+}
+
+#searchBar ul li input {
+    border: 1px solid #848484;
+    border-radius: 10px;
+    outline: 0;
+    min-height: 30px;
+    min-width: 375px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#searchBar ul li .icon-search {
+    position: relative;
+    color: #609732;
+    left: -30px;
+}
+
+.search-bar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0px !important;
+    z-index: 5;
+}
+
+.button-primary, .button-normal {
+    font-size: 16px;
+    padding: 6px 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: arial;
+    margin: 6px;
+    position: relative;
+}
+
+.button-primary {
+    background: linear-gradient(to bottom, #54842c 5%, #487125 100%);
+    border: 1px solid #234C00;
+    color: #FEFFFD;
+    text-shadow: 0px 1px 1px #234C00;
+}
+
+.button-primary:hover {
+    background: linear-gradient(to bottom, #54842c 5%, #609732 100%);
+}
+
+.button-normal {
+    background: linear-gradient(to bottom, #f1ffe3 5%, #e5ffca 100%);
+    border: 1px solid #609732;
+    color: #234C00;
+    text-shadow: 0px 1px 1px #609732;
+}
+
+.button-normal:hover {
+    background: linear-gradient(to bottom, #f1ffe3 5%, #FEFFFD 100%);
+}
+
+.link-normal {
+    font-size: 1em;
+    text-decoration: none;
+    font-family: arial;
+    color: #609732;
+}
+
+.link-normal:hover {
+    color: #B9E396;
+}
+
+.container {
+    margin: 25px auto 25px auto;
+    width: 1000px;
+}
+
+.container h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #609732;
+}
+
+.container p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+.category {
+    float: left;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #234C00;
+    width: 200px;
+    margin: 25px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.category:hover {
+    opacity: 0.8;
+    color: #609732;
+}
+
+.category-image-box {
+    border: solid #B9E396 2px;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.category-image-box img {
+    width: 100%;
+}
+
+.slider {
+    width: 640px;
+    position: relative;
+    padding-top: 320px;
+    margin: 100px auto;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+.slider > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+}
+
+.slider input[name='slide_switch'] {
+    display: none;
+}
+
+.slider label {
+    margin: 18px 0 0 18px;
+    border: 3px solid #999;
+    float: left;
+    cursor: pointer;
+    transition: all 0.5s;
+    opacity: 0.6;
+}
+
+.slider label img {
+    display: block;
+}
+
+.slider input[name='slide_switch']:checked + label {
+    border-color: #666;
+    opacity: 1;
+}
+
+.slider input[name='slide_switch'] ~ img {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.slider input[name='slide_switch']:checked + label + img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-light {
+    color: #AAAAAA;
+    font-size: 0.9em !important;
+}
+
+/*# sourceMappingURL=style.css.map */
