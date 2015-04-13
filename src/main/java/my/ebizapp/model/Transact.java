@@ -29,6 +29,9 @@ public class Transact {
     @Column(nullable = false)
     private boolean shipped = false;
 
+    Transact() {
+    }
+
     public Transact(Product product, Customer customer, float priceSnapshot, long quantity) {
         this.product = product;
         this.customer = customer;

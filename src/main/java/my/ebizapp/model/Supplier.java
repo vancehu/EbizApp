@@ -39,6 +39,7 @@ public class Supplier {
     @ManyToOne
     private Area area;
 
+    @JsonIgnore
     @OneToMany
     private List<Product> products;
 

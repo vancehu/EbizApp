@@ -1,5 +1,7 @@
 package my.ebizapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -30,11 +32,16 @@ public class Product {
     @Column(length = 32)
     private String imgLink;
 
+    @JsonIgnore
     @ManyToMany
     private List<Category> categories;
 
+    @JsonIgnore
     @OneToMany
     private List<Transact> transacts;
+
+    Product() {
+    }
 
     public Product(Supplier supplier, String name, String description, long stockQuantity, float price, String imgLink,
                    List<Category> categories) {
@@ -118,7 +125,6 @@ public class Product {
     public void setTransacts(List<Transact> transacts) {
         this.transacts = transacts;
     }
-
 
 
 }

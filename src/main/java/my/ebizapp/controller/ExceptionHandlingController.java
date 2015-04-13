@@ -20,7 +20,6 @@ public class ExceptionHandlingController {
     }
 
 
-
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     final class InternalServerErrorException extends RuntimeException {
         public InternalServerErrorException(String msg) {
@@ -28,6 +27,7 @@ public class ExceptionHandlingController {
         }
     }
 }
+
 @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 final class BadRequestException extends RuntimeException {
     public BadRequestException(String msg) {

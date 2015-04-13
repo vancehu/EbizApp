@@ -28,6 +28,9 @@ public class Cart {
     @Column(nullable = false)
     private Date time = new Date();
 
+    Cart() {
+    }
+
     public Cart(Product product, Customer customer, float priceSnapshot, long quantity) {
         this.product = product;
         this.customer = customer;

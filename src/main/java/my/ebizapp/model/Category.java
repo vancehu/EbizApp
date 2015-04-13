@@ -1,5 +1,7 @@
 package my.ebizapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,8 +23,12 @@ public class Category {
     @Column(length = 32)
     private String imgLink;
 
+    @JsonIgnore
     @ManyToMany
     private List<Product> products;
+
+    Category() {
+    }
 
     public Category(String name, long parentId, String imgLink) {
         this.name = name;

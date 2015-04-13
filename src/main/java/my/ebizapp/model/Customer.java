@@ -40,6 +40,7 @@ public class Customer {
     @ManyToOne
     private Area area;
 
+    @JsonIgnore
     @OneToMany
     private List<Transact> transacts;
 

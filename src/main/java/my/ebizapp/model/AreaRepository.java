@@ -7,6 +7,6 @@ import java.util.List;
 /**
  * Created by Vance on 4/9/15.
  */
-public interface AreaRepository extends CrudRepository<Area, Long>{
+public interface AreaRepository extends CrudRepository<Area, Long> {
     List<Area> findByZipcode(String zipcode);
 }

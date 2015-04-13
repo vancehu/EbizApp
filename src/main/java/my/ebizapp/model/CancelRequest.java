@@ -28,6 +28,9 @@ public class CancelRequest {
     @Column(nullable = false)
     private Date time = new Date();
 
+    CancelRequest() {
+    }
+
     public CancelRequest(Transact transact, boolean customerApproved, boolean supplierApproved, String reason) {
         this.transact = transact;
         this.customerApproved = customerApproved;
